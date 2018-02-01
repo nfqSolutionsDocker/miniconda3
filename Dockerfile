@@ -12,6 +12,7 @@ RUN apt-get -qq update && apt-get -qq -y install curl bzip2 \
     && apt-get -qq -y autoremove \
     && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/* /var/log/dpkg.log \
-    && conda clean --all --yes
+    && conda clean --all --yes \
+    && ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 
 ENV PATH /opt/conda/bin:$PATH
