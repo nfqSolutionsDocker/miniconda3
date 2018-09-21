@@ -15,4 +15,6 @@ RUN apt-get -qq update && apt-get -qq -y install curl bzip2 \
     && conda clean --all --yes \
     && ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 
+WORKDIR /code
+
 ENV PATH /opt/conda/bin:$PATH
